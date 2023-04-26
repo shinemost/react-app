@@ -1,3 +1,9 @@
+/*
+ * @LastEditors: shinemost supertain147@163.com
+ * @Date: 2023-04-26 21:43:33
+ * @LastEditTime: 2023-04-26 22:36:31
+ * @FilePath: \react-app\src\Message.tsx
+ */
 function Message() {
 
   const name = '';
