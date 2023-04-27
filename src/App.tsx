@@ -8,9 +8,12 @@ import ListGroup from './components/ListGroup'
 
 function App() {
   let items = ['纽约', '旧金山', '东京', '伦敦', '巴黎', '北京']
+  const handlerSelected = (item: string) => {
+    console.log(item)
+  }
   return (
     <div>
-      <ListGroup items={items} heading="城市" />
+      <ListGroup items={items} heading="城市" onSelectItem={handlerSelected} />
     </div>
   )
 }
