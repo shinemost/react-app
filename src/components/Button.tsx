@@ -2,13 +2,13 @@ import React from 'react'
 
 interface Props {
   classname: string
-  text: string
+  children: string
 }
 
-const Button = ({ classname, text }: Props) => {
+const Button = ({ classname, children }: Props) => {
   return (
     <button type="button" className={classname}>
-      {text}
+      {children}
     </button>
   )
 }
