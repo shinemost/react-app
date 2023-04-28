@@ -41,4 +41,14 @@
   }
   ```
 
+- 修改字段的类型为特定字符串来限定字段的值范围：
+
+  ```typescript
+  interface Props {
+    color?: 'primary' | 'secondary' | 'danger'
+    children: string
+    onclick: () => void
+  }
+  ```
+
   
