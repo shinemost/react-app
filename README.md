@@ -30,3 +30,15 @@
   - 快速生成箭头函数组件：rafce
 
 - 浏览器使用React Developer Tools插件，查看浏览器中的react组件及性能，也可以在浏览器中查看源代码
+
+- 字段后+？表示该字段是可选的
+
+  ```typescript
+  interface Props {
+    color?: string
+    children: string
+    onclick: () => void
+  }
+  ```
+
+  
