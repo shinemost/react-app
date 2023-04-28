@@ -1,7 +1,7 @@
 /*
  * @LastEditors: shinemost supertain147@163.com
  * @Date: 2023-04-26 20:47:45
- * @LastEditTime: 2023-04-28 23:28:26
+ * @LastEditTime: 2023-04-28 23:46:00
  * @FilePath: \react-app\src\App.tsx
  */
 import Alert from './components/Alert'
@@ -13,15 +13,7 @@ function App() {
       <Alert>
         泰裤 <h1>辣</h1>
       </Alert>
-      <Button classname="btn btn-primary">Primary</Button>
-      <Button classname="btn btn-secondary">Secondary</Button>
-      <Button classname="btn btn-success">Success</Button>
-      <Button classname="btn btn-danger">Danger</Button>
-      <Button classname="btn btn-warning">Warning</Button>
-      <Button classname="btn btn-info">Info</Button>
-      <Button classname="btn btn-light">Light</Button>
-      <Button classname="btn btn-dark">Dark</Button>
-      <Button classname="btn btn-link">Link</Button>
+      <Button onclick={() => console.log('clicked')}>Primary</Button>
     </div>
   )
 }
