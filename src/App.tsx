@@ -13,7 +13,9 @@ function App() {
       <Alert>
         泰裤 <h1>辣</h1>
       </Alert>
-      <Button onclick={() => console.log('clicked')}>Primary</Button>
+      <Button color="danger" onclick={() => console.log('clicked')}>
+        Primary
+      </Button>
     </div>
   )
 }

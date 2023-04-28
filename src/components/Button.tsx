@@ -1,12 +1,12 @@
 import React from 'react'
 
 interface Props {
-  color?: string
+  color?: 'primary' | 'secondary' | 'danger'
   children: string
   onclick: () => void
 }
 
-const Button = ({ color = 'danger', children, onclick }: Props) => {
+const Button = ({ color, children, onclick }: Props) => {
   return (
     <button className={'btn btn-' + color} onClick={onclick}>
       {children}
