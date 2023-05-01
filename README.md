@@ -51,7 +51,7 @@
   }
   ```
 
-- 使用 export default funciton xx语法默认导出
+- 使用 export default funciton xx语法 默认导出 **一个文件里有且仅有一个 默认 导出，但是可以有任意多个 具名导出。**
 
   ```jsx
   export default function Profile() {
@@ -134,7 +134,7 @@
   }
   ```
 
-- 组件件共享数据，需要子组件同步更新 ，可通过将useState钩子上提至父组件中，然后将变量传入子组件实现
+- 组件件共享数据，需要子组件同步更新 ，可通过将useState钩子上提至父组件中，然后将变量传入子组件实现 **状态提升**
 
   ```jsx
   
@@ -162,6 +162,48 @@
   }
   export default Mybutton
   
+  ```
+
+- 将 JSX 作为子组件传递 
+
+  ```jsx
+  import Avatar from './components/Avatar'
+  
+  function Card({ children }: any) {
+    return <div className="card">{children}</div>
+  }
+  
+  function App() {
+    return (
+      <Card>
+        <Avatar
+          size={100}
+          person={{
+            name: 'Katsuko Saruhashi',
+            imageId: 'YfeOqp2',
+          }}
+        />
+      </Card>
+    )
+  };
+  
+  import { getImageUrl } from './utils'
+  
+  export default function Avatar({ person, size }: any) {
+    return (
+      <img
+        className="avatar"
+        src={getImageUrl(person)}
+        alt={person.name}
+        width={size}
+        height={size}
+      />
+    )
+  };
+  
+  export function getImageUrl(person: any, size = 's') {
+    return 'https://i.imgur.com/' + person.imageId + size + '.jpg'
+  }
   ```
 
   
