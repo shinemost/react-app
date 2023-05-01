@@ -1,24 +1,17 @@
 /*
- * @LastEditors: shinemost supertain147@163.com
+ * @LastEditors: fuhaijing fuhaijing@gotion.com.cn
  * @Date: 2023-04-26 20:47:45
- * @LastEditTime: 2023-04-29 01:07:55
+ * @LastEditTime: 2023-05-01 10:50:03
  * @FilePath: \react-app\src\App.tsx
  */
 import { useState } from 'react'
 import Alert from './components/Alert'
 import Button from './components/Button'
+import User from './components/User'
 
 function App() {
-  const [visible, setVisible] = useState(false)
 
-  return (
-    <div>
-      {visible && <Alert onClose={() => setVisible(false)}> 泰裤辣</Alert>}
-      <Button color="danger" onclick={() => setVisible(true)}>
-        My Button
-      </Button>
-    </div>
-  )
+  return <div><User/></div>
 }
 
 export default App

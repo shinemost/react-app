@@ -26,7 +26,7 @@
 
 - 安装ES7插件快捷生成react箭头函数并暴露
 
-  - 插件名：ES7 React/Redux/React-Native/JS snippets
+  - 插件
   - 快速生成箭头函数组件：rafce
 
 - 浏览器使用React Developer Tools插件，查看浏览器中的react组件及性能，也可以在浏览器中查看源代码
