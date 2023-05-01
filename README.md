@@ -33,7 +33,7 @@
 
 - 字段后+？表示该字段是可选的
 
-  ```typescript
+  ```jsx
   interface Props {
     color?: string
     children: string
@@ -43,11 +43,32 @@
 
 - 修改字段的类型为特定字符串来限定字段的值范围：
 
-  ```typescript
+  ```jsx
   interface Props {
     color?: 'primary' | 'secondary' | 'danger'
     children: string
     onclick: () => void
+  }
+  ```
+
+- 使用 export default funciton xx语法默认导出
+
+  ```jsx
+  export default function Profile() {
+    return (
+      <>
+        <h1>{user.name}</h1>
+        <img
+          className="avatar"
+          src={user.imageUrl}
+          alt={'Photo of ' + user.name}
+          style={{
+            width: user.imageSize,
+            height: user.imageSize
+          }}
+        />
+      </>
+     );
   }
   ```
 
