@@ -72,15 +72,13 @@
   }
   ```
 
-- 条件判断语句没有特殊的语法，使用js的if else if else
+- 条件判断语句没有特殊的语法，使用js的if else if else ，也可以使用三木运算符
 
   ```jsx
   function App() {
-  
     let content;
-    let isLoggedIn = false;
     let num = 3;
-  
+      
     if (num === 1) {
       content = <Message/>
     } else if(num === 2) {
@@ -88,8 +86,16 @@
     } else {
       content = <div><Message/><Message/></div>
     }
-  
     return <div>{content}</div>
+  };
+  
+  
+  function App() {
+    let isLoggedIn = true;
+  
+    return <div>
+      {isLoggedIn ?<Message/>:<User/>}
+    </div>
   }
   ```
 
