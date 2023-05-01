@@ -72,7 +72,7 @@
   }
   ```
 
-- 条件判断语句没有特殊的语法，使用js的if else if else ，也可以使用三木运算符
+- 条件判断语句没有特殊的语法，使用js的if else if else ，也可以使用三木运算符 , 不需要else语句时可以使用逻辑与&&
 
   ```jsx
   function App() {
@@ -97,6 +97,71 @@
       {isLoggedIn ?<Message/>:<User/>}
     </div>
   }
+  
+  function App() {
+    let isLoggedIn = true;
+  
+    return <div>
+      {isLoggedIn && <Message />}
+    </div>
+  }
+  ```
+
+- 使用for 或 数组的map进行遍历
+
+  ```jsx
+  export default function ShoopingList() {
+    const items = produceList.map((product) => (
+      <li key={product.id} style={{ color: product.isFruit ? 'red' : 'gray' }}>
+        {product.title}
+      </li>
+    ))
+  
+    let items2 = []
+    
+    for (let index = 0; index < produceList.length; index++) {
+      items2.push(
+        <li
+          key={produceList[index].id}
+          style={{ color: produceList[index].isFruit ? 'yellow' : 'blue' }}
+        >
+          {produceList[index].title}
+        </li>
+      )
+    }
+  
+    return <ul>{items2}</ul>
+  }
+  ```
+
+- 组件件共享数据，需要子组件同步更新 ，可通过将useState钩子上提至父组件中，然后将变量传入子组件实现
+
+  ```jsx
+  
+  function App() {
+    const [count, setCount] = useState(0)
+  
+    function handleClick() {
+      setCount(count + 1)
+    }
+  
+    return (
+      <div>
+        <Mybutton count={count} onClick={handleClick} />
+        <Mybutton count={count} onClick={handleClick} />
+      </div>
+    )
+  }
+  
+  export default App;
+  
+  import { useState } from 'react'
+  
+  const Mybutton = ({ onClick, count }: any) => {
+    return <button onClick={onClick}>Clicked {count} times</button>
+  }
+  export default Mybutton
+  
   ```
 
   
