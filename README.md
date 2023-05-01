@@ -72,4 +72,25 @@
   }
   ```
 
+- 条件判断语句没有特殊的语法，使用js的if else if else
+
+  ```jsx
+  function App() {
+  
+    let content;
+    let isLoggedIn = false;
+    let num = 3;
+  
+    if (num === 1) {
+      content = <Message/>
+    } else if(num === 2) {
+       content = <User/>
+    } else {
+      content = <div><Message/><Message/></div>
+    }
+  
+    return <div>{content}</div>
+  }
+  ```
+
   
