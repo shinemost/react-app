@@ -247,4 +247,38 @@
   
   ```
 
-  
+  - 也可以通过props进行父子组件的数据传递
+
+    ```jsx
+    function App() {
+      return (
+        <div>
+          <Drink name="tea" content="15–70 mg/cup" part="leaf" age="4,000+ years" />
+          <Drink
+            name="coffee"
+            content="80–185 mg/cup"
+            part="bean"
+            age="1,000+ years"
+          />
+        </div>
+      )
+    };
+    export default function ({ name, part, content, age }: any) {
+      return (
+        <section>
+          <h1>{name}</h1>
+          <dl>
+            <dt>Part of plant</dt>
+            <dd>{part}</dd>
+            <dt>Caffeine content</dt>
+            <dd>{content}</dd>
+            <dt>Age</dt>
+            <dd>{age}</dd>
+          </dl>
+        </section>
+      )
+    }
+    
+    ```
+
+    
