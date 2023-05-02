@@ -334,3 +334,34 @@
 
 - 全部属性传递 {...xxx}
 
+- 两层嵌套map重构，将外层map提出，里层map封装成组件
+
+  ```jsx
+  export default function RecipeList() {
+    return (
+      <div>
+        <h1>菜谱</h1>
+        {recipes.map((recipe) => (
+          <Recipe {...recipe} key={recipe.id} />
+        ))}
+      </div>
+    );
+      
+  const Recipe = ({ id, name, ingredients }) => {
+    return (
+      <div key={id}>
+        <h2>{name}</h2>
+        <ul>
+          {ingredients.map((ingredient) => (
+            <li key={ingredient}>{ingredient}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  
+  export default Recipe;
+  ```
+
+  
+
