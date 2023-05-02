@@ -363,5 +363,40 @@
   export default Recipe;
   ```
 
+- 条件语句
+
+  ```jsx
+  const poem = {
+    lines: [
+      'I write, erase, rewrite',
+      'Erase again, and then',
+      'A poppy blooms.',
+    ],
+  }
+  
+  const Article = () => {
+    return (
+      <article>
+        {poem.lines.map((line, index) => (
+          <>
+            {index > 0 && <hr />}
+            <p key={index}>{line}</p>
+          </>
+        ))}
+      </article>
+    )
+  }
+  
+  export default Article
+  ```
+
+- react严格模式，在渲染时会对组件函数调用两次，检测返回结果，如果是不同的化则会报错提示,开启是用React.strictMode标签包围根组件，保证组件函数都是纯函数
+
+  ```jsx
+   <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  ```
+
   
 
