@@ -398,5 +398,7 @@
     </React.StrictMode>
   ```
 
-  
+- 数组的方法区别：
+
+  `push`、`pop`、`reverse` 和 `sort` 会改变原始数组，但 `slice`、`filter` 和 `map` 则会创建一个新数组。
 
