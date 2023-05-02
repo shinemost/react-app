@@ -14,7 +14,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noImplicitAny":false //关闭ts的强类型校验，打开会显示绑定元素xxx隐式具有“any”类型
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

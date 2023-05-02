@@ -3,7 +3,8 @@
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny":false //关闭ts的强类型校验，打开会显示绑定元素xxx隐式具有“any”类型
   },
   "include": ["vite.config.ts"]
 }
