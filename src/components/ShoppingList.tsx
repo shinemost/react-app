@@ -11,7 +11,7 @@ export default function ShoopingList() {
     </li>
   ))
 
-  let items2 = []
+  let items2
 
   for (let index = 0; index < produceList.length; index++) {
     items2.push(

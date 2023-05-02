@@ -314,4 +314,23 @@
     }
     ```
 
-    
+- 因为箭头函数会隐式地返回位于 `=>` 之后的表达式，所以你可以省略 `return` 语句。
+
+  ```jsx
+  const listItems = chemists.map(person =>
+    <li>...</li> // 隐式地返回！
+  );
+  ```
+
+  不过，**如果你的 `=>` 后面跟了一对花括号 `{` ，那你必须使用 `return` 来指定返回值！**
+
+  ```jsx
+  const listItems = chemists.map(person => { // 花括号
+    return <li>...</li>;
+  });
+  ```
+
+  箭头函数 `=> {` 后面的部分被称为 [“块函数体”](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#function_body)，块函数体支持多行代码的写法，但要用 `return` 语句才能指定返回值。假如你忘了写 `return`，那这个函数什么都不会返回！
+
+- 全部属性传递 {...xxx}
+
