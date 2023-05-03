@@ -458,21 +458,46 @@
 
     捕获事件对于路由或数据分析之类的代码很有用，但你可能不会在应用程序代码中使用它们。
 
-- 阻止少数事件的默认浏览器行为。
+  - 阻止少数事件的默认浏览器行为。
+
+    ```jsx
+    export default function Signup() {
+      return (
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            alert('提交表单！')
+          }}
+        >
+          <input />
+          <button>发送</button>
+        </form>
+      )
+    }
+    ```
+
+  - 在组件里可以定义多个状态
+
+    ```jsx
+      const [index, setIndex] = useState(0)
+      const [showMore, setShowMore] = useState(false)
+    ```
+
+- 移除不必要的state
+
+  State 变量仅用于在组件重渲染时保存信息。在单个事件处理函数中，普通变量就足够了。当普通变量运行良好时，不要引入 state 变量
 
   ```jsx
-  export default function Signup() {
-    return (
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          alert('提交表单！')
-        }}
-      >
-        <input />
-        <button>发送</button>
-      </form>
-    )
+  export default function FeedbackForm2() {
+    // const [name, setName] = useState('')
+  
+    function handleClick() {
+      // setName(prompt('What is your name?'))
+      const name = prompt('What is your name?')
+      alert(`Hello, ${name}!`)
+    }
+  
+    return <button onClick={handleClick}>Greet</button>
   }
   ```
 
