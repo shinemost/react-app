@@ -1,7 +1,7 @@
 /*
  * @LastEditors: shinemost supertain147@163.com
  * @Date: 2023-05-03 11:52:51
- * @LastEditTime: 2023-05-03 11:53:09
+ * @LastEditTime: 2023-05-03 20:53:33
  * @FilePath: \react-app\src\components\Gallery.tsx
  */
 import { useState } from 'react'
@@ -12,7 +12,15 @@ const Gallery = () => {
   const [showMore, setShowMore] = useState(false)
 
   function handleNextClick() {
-    setIndex(index + 1)
+    if (index < sculptureList.length) {
+      setIndex(index + 1)
+    }
+  }
+
+  function handlePerviousClick() {
+    if (index > 0) {
+      setIndex(index - 1)
+    }
   }
 
   function handleMoreClick() {
@@ -22,7 +30,15 @@ const Gallery = () => {
   let sculpture = sculptureList[index]
   return (
     <>
-      <button onClick={handleNextClick}>Next</button>
+      <button onClick={handlePerviousClick} disabled={index === 0}>
+        Pervious
+      </button>
+      <button
+        onClick={handleNextClick}
+        disabled={index === sculptureList.length - 1}
+      >
+        Next
+      </button>
       <h2>
         <i>{sculpture.name} </i>
         by {sculpture.artist}
