@@ -458,3 +458,22 @@
 
     捕获事件对于路由或数据分析之类的代码很有用，但你可能不会在应用程序代码中使用它们。
 
+- 阻止少数事件的默认浏览器行为。
+
+  ```jsx
+  export default function Signup() {
+    return (
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          alert('提交表单！')
+        }}
+      >
+        <input />
+        <button>发送</button>
+      </form>
+    )
+  }
+  ```
+
+  
