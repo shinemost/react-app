@@ -402,3 +402,6 @@
 
   `push`、`pop`、`reverse` 和 `sort` 会改变原始数组，但 `slice`、`filter` 和 `map` 则会创建一个新数组。
 
+- 在React中所有事件都会传播，除了onScroll,它仅适用于你附件到的JSX标签
+
+  
