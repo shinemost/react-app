@@ -27,7 +27,7 @@ const Gallery = () => {
     setShowMore(!showMore)
   }
 
-  let sculpture = sculptureList[index]
+  const sculpture = sculptureList[index]
   return (
     <>
       <button onClick={handlePerviousClick} disabled={index === 0}>
