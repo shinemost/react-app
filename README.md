@@ -404,4 +404,36 @@
 
 - 在React中所有事件都会传播，除了onScroll,它仅适用于你附件到的JSX标签
 
+  ```jsx
+  const Toolbar = () => {
+    return (
+      <div className="Toolbar" onClick={() => alert('你点击了toolbar')}>
+        <Button onclick={() => alert('正在播放！')}>播放电影</Button>
+        <Button onclick={() => alert('正在上传！')}>上传图片</Button>
+      </div>
+    )
+  }
   
+  export default Toolbar
+  ```
+
+  - 可通过调用事件event的stopPropagation方法阻止事件传播
+
+    ```jsx
+    const Button = ({ color, children, onclick }: Props) => {
+      return (
+        <button
+          className={'btn btn-' + color}
+          onClick={(e) => {
+            e.stopPropagation()
+            onclick()
+          }}
+        >
+          {children}
+        </button>
+      )
+    }
+    ```
+
+    
+
