@@ -2,7 +2,7 @@
  * @Author: fuhj_smc fuhj_smc@si-tech.com.cn
  * @Date: 2023-05-07 21:32:31
  * @LastEditors: shinemost supertain147@163.com
- * @LastEditTime: 2023-05-07 23:03:20
+ * @LastEditTime: 2023-05-07 23:04:54
  * @FilePath: \react-app\src\components\Counter.tsx
  */
 import { useState } from 'react'
@@ -16,6 +16,7 @@ const Counter = () => {
         onClick={() => {
           setNumber(number + 5)
           setNumber((number) => number + 1)
+          setNumber(42)
         }}
       >
         增加数字
