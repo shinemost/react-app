@@ -531,3 +531,44 @@
   setNumber(number + 1)：number 是0 所以 setNumber(0 + 1)。
   React 准备在下一次渲染时将 number 更改为 1。
   尽管你调用了三次 setNumber(number + 1)，但在 这次渲染的 事件处理函数中 number 会一直是 0，所以你会三次将 state 设置成 1。这就是为什么在你的事件处理函数执行完以后，React 重新渲染的组件中的 number 等于 1 而不是 3。
+
+- number=0，在当前渲染中，state的值是固定不会变化的，此时是初始值0，而下次渲染的state值则为5
+
+  ```jsx
+  const Counter = () => {
+    const [number, setNumber] = useState(0)
+    return (
+      <>
+        <h1>{number}</h1>
+        <button
+          onClick={() => {
+            setNumber(number + 5)
+            alert(number)
+          }}
+        >
+          +5
+        </button>
+      </>
+    );
+  const Counter = () => {
+    const [number, setNumber] = useState(0)
+    return (
+      <>
+        <h1>{number}</h1>
+        <button
+          onClick={() => {
+            setNumber(number + 5)
+            setTimeout(() => {
+              alert(number)
+            }, 3000)
+          }}
+        >
+          +5
+        </button>
+      </>
+    )
+  }
+      
+  ```
+
+  
