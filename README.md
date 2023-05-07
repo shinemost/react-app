@@ -596,3 +596,24 @@
 - React 会在事件处理函数执行完成之后处理 state 更新。这被称为批处理。
 
   要在一个事件中多次更新某些 state，你可以使用 `setNumber(n => n + 1)` 更新函数。
+
+- 用js实现useState批处理和更新函数的逻辑
+
+  ```javascript
+  export function getFinalState(baseState, queue) {
+    let finalState = baseState;
+  
+    for (let update of queue) {
+      if (typeof update === 'function') {
+        // 调用更新函数
+        finalState = update(finalState);
+      } else {
+        // 替换下一个 state
+        finalState = update;
+      }
+    }
+    return finalState;
+  }
+  ```
+
+  
