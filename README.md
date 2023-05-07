@@ -501,4 +501,33 @@
   }
   ```
 
-  
+- **设置 state 只会为 下一次 渲染变更 state 的值**。
+
+  ```jsx
+  const Counter = () => {
+    const [number, setNumber] = useState(0)
+    return (
+      <>
+        <h1>{number}</h1>
+        <button
+          onClick={() => {
+            setNumber(number + 1)
+            setNumber(number + 1)
+            setNumber(number + 1)
+          }}
+        >
+          +3
+        </button>
+      </>
+    )
+  ```
+
+  以下是这个按钮的点击事件处理函数通知 React 要做的事情：
+
+  setNumber(number + 1)：number 是 0 所以 setNumber(0 + 1)。
+  React 准备在下一次渲染时将 number 更改为 1。
+  setNumber(number + 1)：number 是0 所以 setNumber(0 + 1)。
+  React 准备在下一次渲染时将 number 更改为 1。
+  setNumber(number + 1)：number 是0 所以 setNumber(0 + 1)。
+  React 准备在下一次渲染时将 number 更改为 1。
+  尽管你调用了三次 setNumber(number + 1)，但在 这次渲染的 事件处理函数中 number 会一直是 0，所以你会三次将 state 设置成 1。这就是为什么在你的事件处理函数执行完以后，React 重新渲染的组件中的 number 等于 1 而不是 3。
