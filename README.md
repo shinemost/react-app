@@ -652,4 +652,15 @@
   }
   ```
 
+- 使用对象展开更新useState对象
+
+  ```jsx
+  function handleFirstNameChange(e) {
+      setPerson({
+        ...person,
+        firstName: e.target.value,
+      })
+    }
+  ```
+
   
