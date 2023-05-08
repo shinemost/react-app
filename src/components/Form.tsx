@@ -7,24 +7,10 @@ const Form = () => {
     email: 'bhepworth@sculpture.com',
   })
 
-  function handleFirstNameChange(e) {
+  function handleChange(e) {
     setPerson({
       ...person,
-      firstName: e.target.value,
-    })
-  }
-
-  function handleLastNameChange(e) {
-    setPerson({
-      ...person,
-      lastName: e.target.value,
-    })
-  }
-
-  function handleEmailChange(e) {
-    setPerson({
-      ...person,
-      email: e.target.value,
+      [e.target.name]: e.target.value,
     })
   }
 
@@ -32,15 +18,23 @@ const Form = () => {
     <>
       <label>
         First name:
-        <input value={person.firstName} onChange={handleFirstNameChange} />
+        <input
+          name="firstName"
+          value={person.firstName}
+          onChange={handleChange}
+        />
       </label>
       <label>
         Last name:
-        <input value={person.lastName} onChange={handleLastNameChange} />
+        <input
+          name="lastName"
+          value={person.lastName}
+          onChange={handleChange}
+        />
       </label>
       <label>
         Email:
-        <input value={person.email} onChange={handleEmailChange} />
+        <input name="email" value={person.email} onChange={handleChange} />
       </label>
       <p>
         {person.firstName} {person.lastName} ({person.email})
