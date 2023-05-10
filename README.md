@@ -721,6 +721,11 @@
 
 - 使用三方库use-immer中的useImmer替换useState，编写简洁的更新逻辑
 
+  要试用 Immer：
+  
+  1.运行以将 Immer 添加为依赖项npm install use-immer
+  2.然后替换为import { useState } from 'react'import { useImmer } from 'use-immer'
+  
   ```jsx
   import { useImmer } from 'use-immer'
   
@@ -790,5 +795,5 @@
   
   export default Form
   ```
-
+  
   
