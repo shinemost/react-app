@@ -829,4 +829,43 @@
   
   ```
 
+- 从数组中删除元素
+
+  从数组中删除一个元素最简单的方法就是将它*过滤出去*。换句话说，你需要生成一个不包含该元素的新数组。这可以通过 `filter` 方法实现
+
+  ```jsx
+  import { useState } from 'react'
+  
+  const initialArtists = [
+    { id: 0, name: 'Marta Colvin Andrade' },
+    { id: 1, name: 'Lamidi Olonade Fakeye' },
+    { id: 2, name: 'Louise Nevelson' },
+  ]
+  
+  export default function List2() {
+    const [artists, setArtists] = useState(initialArtists)
+  
+    return (
+      <>
+        <h1>振奋人心的雕塑家们：</h1>
+        <ul>
+          {artists.map((artist) => (
+            <li key={artist.id}>
+              {artist.name}{' '}
+              <button
+                onClick={() => {
+                  setArtists(artists.filter((a) => a.id !== artist.id))
+                }}
+              >
+                删除
+              </button>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+  
+  ```
+
   

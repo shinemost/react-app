@@ -1,7 +1,7 @@
 /*
  * @LastEditors: shinemost supertain147@163.com
  * @Date: 2023-04-26 20:47:45
- * @LastEditTime: 2023-05-14 22:11:54
+ * @LastEditTime: 2023-05-14 22:38:08
  * @FilePath: \react-app\src\App.tsx
  */
 /*
@@ -11,12 +11,12 @@
  * @FilePath: \react-app\src\App.tsx
  */
 
-import List from './components/List.js'
+import List2 from './components/List2.js'
 
 function App() {
   return (
     <div>
-      <List />
+      <List2 />
     </div>
   )
 }
