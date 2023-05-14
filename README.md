@@ -722,10 +722,10 @@
 - 使用三方库use-immer中的useImmer替换useState，编写简洁的更新逻辑
 
   要试用 Immer：
-  
+
   1.运行以将 Immer 添加为依赖项npm install use-immer
   2.然后替换为import { useState } from 'react'import { useImmer } from 'use-immer'
-  
+
   ```jsx
   import { useImmer } from 'use-immer'
   
@@ -795,5 +795,38 @@
   
   export default Form
   ```
+
+- 更新state中的数组，通过数组展开的方式
+
+  ```jsx
+  import { useState } from 'react'
   
+  let nextId = 0
+  
+  export default function List() {
+    const [name, setName] = useState('')
+    const [artists, setArtists] = useState([])
+  
+    return (
+      <>
+        <h1>振奋人心的雕塑家们：</h1>
+        <input value={name} onChange={(e) => setName(e.target.value)} />
+        <button
+          onClick={() => {
+            setArtists([...artists, { id: nextId++, name: name }])
+          }}
+        >
+          添加
+        </button>
+        <ul>
+          {artists.map((artist) => (
+            <li key={artist.id}>{artist.name}</li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+  
+  ```
+
   
